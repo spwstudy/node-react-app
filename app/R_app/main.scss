@@ -1,0 +1,70 @@
+@import '@/lib/reset.scss';
+
+.container{
+  @include flexbox();
+  @include flex-direction(column);
+  .pubHeader{
+    @include rect(100%, 0.8rem);
+    @include background-color(#b70006);
+    header{
+      @include rect(100%, 0.45rem);
+      @include text-color(#fff);
+      .pubTop{
+        @include rect(100%, 100%);
+        @include flexbox();
+        li{
+          @include flexbox();
+          @include justify-content();
+          @include align-items(); 
+          @include font-size(0.14rem);
+          i{
+            @include font-size(0.18rem);
+          }
+        }
+        li:nth-child(1){
+          @include margin(0 0 0 0.1rem);
+          img{
+            @include rect(0.93rem, auto);
+          }
+        }
+        li:nth-child(2){
+          @include margin(0 0 0 0.1rem);
+        }
+        li:nth-child(4),li:nth-child(5){
+          @include margin(0 0 0 0.2rem);
+        }
+        li:nth-child(3){
+          @include margin(0 0 0 0.8rem);
+        }
+      }
+    }
+    .headerNav{
+      @include rect(100%, 0.35rem);
+      @include flexbox();
+      li{
+        @include flexbox();
+        @include rect(auto, 100%);
+        @include flex();
+        @include font-size(0.16rem)
+        
+        a{
+          @include flexbox();
+          @include rect(100%, 100%);
+          @include text-color(#fff);
+          @include opacity(0.5);
+          @include justify-content();
+          @include align-items();
+          &.active{
+          	@include opacity(1);
+          }
+        }
+      }
+      
+    }
+  }
+  .content{
+    @include rect(100%, auto);
+    
+    
+  }
+}
