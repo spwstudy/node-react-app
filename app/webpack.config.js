@@ -32,12 +32,19 @@ module.exports = {
         test: /\.js|jsx$/,
         loader: 'babel-loader',
         query: {
-          presets: ['env', 'react']
+          presets: ['env', 'react'],
+          "plugins": [
+          		["import", { libraryName: "antd-mobile", style: "css" }] // `style: true` 会加载 less 文件
+          ]
         }
       },
       {
         test: /\.scss$/,
         loader: 'style-loader!css-loader!sass-loader'
+      },
+      {
+      	test: /\.css$/,
+      	loader: 'style-loader!css-loader'
       }
     ]
   },

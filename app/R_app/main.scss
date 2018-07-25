@@ -1,7 +1,11 @@
 @import '@/lib/reset.scss';
 
+html, body, #root, .container {
+  @include rect(100%, 100%);
+}
 .container{
   @include flexbox();
+  // @include rect(100%, 100%);
   @include flex-direction(column);
   .pubHeader{
     @include rect(100%, 0.8rem);
@@ -63,8 +67,405 @@
     }
   }
   .content{
+    @include overflow();
+    @include flex();
     @include rect(100%, auto);
-    
-    
+    @include background-color(#ccc);
+    .kindNav{
+      @include rect(100%, 0.3rem);
+      @include wrap(false);
+      @include overflow();
+      @include margin(0 0 1px 0);
+      @include background-color(#fff);
+      li{
+        @include display(inline-block);
+        @include rect(auto, 100%);
+        @include padding(5px);
+        @include text-align();
+        @include line-height(0.2rem);
+        
+        &.navActive{
+          @include border( 0 0 1px 0, #b70006);
+        }
+      }
+    }
+    .imgList{
+      // @include flexbox();
+      @include rect(100%, 1.86rem);
+      @include padding(0 5px);
+      @include background-color(#fff);
+      @include margin(0 0 0.13rem 0);
+      li{
+        @include rect(20%, 0.82rem);
+        @include float(left);
+        @include text-align();
+        @include padding(0.19rem 0 0.02rem 0);
+        img{
+        	@include rect(0.44rem, 0.44rem);
+        }
+        p{
+        	@include font-size(0.12rem);
+        }
+      }
+    }
+    .bigImg{
+      @include background-color(#fff);
+      @include rect(100%, auto);
+      @include padding(0.1rem 0.1rem);
+      @include margin(0 0 0.1rem 0);
+      img{
+        @include rect(100%, auto);
+      }
+    }
+    .homeList{
+      @include rect(100%, auto);
+      @include background-color(#fff);
+      li{
+        @include flexbox();
+        @include rect(100%, 1rem);
+        @include border( 0 0 0.01rem 0, #ccc);
+        img{
+          @include rect(0.9rem,0.9rem);
+          @include margin(0.05rem);
+        }
+        div{
+          @include flex();
+          p:nth-child(1){
+            @include font-size(0.16rem);
+            @include text-color(#000);
+          }
+          p:nth-child(2){
+          	@include font-size(0.12rem);
+          	@include text-color(#ccc);
+            span{
+              @include text-color(#b70006);
+            }
+          }
+          p:nth-child(3){
+          	@include font-size(0.14rem);
+          	@include text-color(#b70006);
+          }
+        }
+      }
+    }
+    .ren_shop{
+      @include background-color(#fff);
+      @include rect(100%, 0.4rem);
+      @include text-align();
+      @include line-height(0.4rem);
+      @include text-color(#000);
+      @include font-size(0.18rem);
+      @include border(0 0 2px 0, #b70006);
+      // @include margin(0 0 15px 0);
+    }
+    .renovationList{
+      @include rect(100%, auto);
+      @include background-color(#fff);
+      li{
+        @include flexbox();
+        @include rect(100%, 1rem);
+        // @include margin(0 0 0.1rem 0);
+        img{
+          @include rect(0.9rem, 0.9rem);
+          @include margin(5px);
+         border:1px solid #ccc;
+        }
+        .renlist{
+          @include flex();
+        }
+      }
+    }
+    .designer{
+      @include margin(0.1rem 0 0 0);
+      @include rect(100%, auto);
+      @include background-color(#fff);
+      .designer_top{
+        
+        @include rect(100%, 0.4rem);
+        @include text-align();
+        @include line-height(0.4rem);
+        @include text-color(#000);
+        @include font-size(0.18rem);
+        @include border(0 0 2px 0, #b70006);
+      }
+      .designer_list{
+        @include rect(100%, 400px);
+        @include padding(0.15rem 0 0 0);
+        li{
+          @include padding(0 0.1rem 0.2rem 0.1rem);
+          @include margin( 0 0 0.3rem 0);
+          @include rect(100%, auto);
+          .designer_detail{
+            @include rect(100%, 0.45rem);
+            @include padding(0 0 0.14rem 0);
+            .designer_role{
+              @include float(left);
+              @include rect(0.36rem, 0.36rem);
+              @include line-height(0.45rem)
+              img{
+                @include rect(0.36rem, 0.36rem);
+                @include border-radius(50%);
+              }
+            }
+            .designer_picture{
+              @include margin(0 0 0.1rem 0.15rem);
+              @include float(left);
+              @include rect(auto, 50px);
+              .designer_name{
+                @include rect(auto, 20px);
+                @include margin(0 0 0.08rem 0);
+                span{
+                  @include display(block);
+                  @include margin( 0 0 0 20px);
+                  @include rect(auto, 20px);
+                  @include border-radius(10px);
+                  @include border(1px 1px 1px 1px, #fb6e06, solid);
+                  @include text-color(#fb6e06);
+                  @include padding(0 0.08rem);
+                  @include float(right);
+                }
+              }
+              .designer_eg{
+                span{
+                  @include margin( 0 0 0 20px);
+                }
+              }
+            }
+          }
+          .picture_B{
+            @include rect(100%, 0.6rem);
+            ul{
+              @include rect(100%, 100%);
+              @include flexbox();
+              
+              li{
+                @include rect(33.33%, auto);
+                @include padding(0 0.1rem 0 0);
+                img{
+                  @include rect(100%, 0.83rem);
+                  @include border-radius(0.06rem);
+                }
+              }
+              li:nth-child(3){
+                @include padding(0);
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .detailAll{
+    @include flexbox();
+    @include flex-direction(column);
+    @include rect(100%, 100%);
+    .detailHeader{
+    	@include rect(100%, 0.5rem);
+    	@include background-color(#ddd);
+    	@include flexbox();
+    	ul{
+    		@include rect(100%, 0.5rem);
+    		@include flexbox();
+    		li{
+    			@include rect(auto, 100%);
+    			@include flexbox();
+    			@include justify-content();
+    			@include align-items();
+    			@include font-size(0.16rem);
+    			i{
+    				@include font-size(0.16rem);
+    			}
+    		}
+    		li:nth-child(1){
+    			@include rect(0.4rem,100%);
+    		}
+    		li:nth-child(2){
+    			@include flex();
+    		}
+    		li:nth-child(3){
+    			@include rect(0.4rem,100%);
+    		}
+    	}
+    }
+    .detailMain{
+    	@include flex();
+    	@include rect(100%,100%);
+    	@include overflow();
+    	@include background-color(#fff);
+      img{
+        @include rect(100%,auto);
+
+      }
+    }
+    .detailFooter{
+    	@include rect(100%, 0.5rem);
+    	@include flexbox();
+    	@include background-color(#fff);
+    	li{
+    		@include flexbox();
+    		@include justify-content();
+    		@include align-items();
+    	}
+    	li:nth-child(1){
+    		@include rect(0.8rem, 100%);
+    		@include border(1px 1px 0 0, #ddd);
+    	}
+    	li:nth-child(2){
+    		@include rect(0.8rem, 100%);
+    		@include border(1px 0 0 0, #ddd);
+    	}
+    	li:nth-child(3){
+    		@include flex();
+    		@include font-size(0.16rem);
+    		@include background-color(#b70006);
+    	}
+    }
+  }
+  .designer_all{
+    @include flexbox();
+    @include rect(100%, 100%);
+    @include flex-direction(column);
+    .designer_header{
+    	// @include flexbox();
+    	@include rect(100%, 0.5rem);
+    	@include background-color(#fff);
+    	.designer_back{
+    		@include rect(100%, 100%);
+    		@include padding(0 0.15rem);
+    		@include border(0 0 1px 0, e0dfdf)
+    		li{
+    			@include rect(50%, 100%);
+    			
+    			@include line-height(0.5rem);
+    			i{
+    				@include font-size(0.2rem);
+    			}
+    		}
+    		li:nth-child(1){
+    			@include float(left);
+    		}
+    		li:nth-child(2){
+    			@include float(right);
+    			@include text-align(right);
+    		}
+    	}
+    }
+    .designer_main_con{
+    	@include flex();
+    	@include rect(100%, auto);
+    	@include overflow();
+    	.designer_M{
+    		@include padding(0.2rem 0 0.4rem 0);
+    		@include rect(100%, auto);
+    		@include background-color(#fff);
+    		@include margin(0 0 0.2rem 0);
+    		div:nth-child(1){
+    			@include rect(100%, 0.76rem);
+    			@include text-align();
+    			@include align-items();
+    			img{
+    				@include rect(0.76rem, 0.76rem);
+    				@include border-radius(50%);
+    			}
+    		}
+    		div:nth-child(2){
+    			position:relative;
+    			@include text-align();
+    			@include align-items();
+    			@include rect(100%, 0.24rem);
+    			@include margin(0.14rem 0 0 0);
+    			p{
+    				position:absolute;
+    				left: 41.5%;
+    				top:0;
+    				@include font-size(0.17rem);
+    				span{
+    					@include margin( 0 0 0 0.15rem);
+    					@include rect(auto, 0.24rem);
+    					@include border(1px 1px 1px 1px, #f16124, solid);
+    					@include padding(0 0.1rem);
+    					@include text-align();
+    					@include line-height(0.34rem);
+    					@include text-color(#f16124);
+    					@include border-radius(0.12rem);
+    					@include font-size(0.12rem);
+    				}
+    			}
+    		}
+    		div:nth-child(3){
+    			@include text-align();
+    			@include align-items();
+    			@include padding(0.12rem 0 0 0);
+    		}
+    		div:nth-child(4){
+    			@include text-align();
+    			@include align-items();
+    			@include padding(0.24rem 0 0 0);
+    		}
+    		div:nth-child(5){
+    			@include text-align();
+    			// @include align-items();
+    			@include padding(0.3rem 0.3rem 0);
+    			span:nth-child(1){
+    				@include margin(0 0.12rem);
+    				@include rect(1.3rem, 0.36rem);
+    				@include border(1px, #d00, solid);
+    				@include text-align();
+    				@include line-height(0.36rem);
+    				// @include padding(0.1rem 0.2rem);
+    				@include font-size(0.145rem);
+    				@include text-color(#d00);
+    				@include display(block);
+    				@include border-radius(0.17rem);
+    				@include float(left);
+    			}
+    			span:nth-child(2){
+    				@include margin(0 0.12rem);
+    				@include rect(1.3rem, 0.36rem);
+    				// @include border(1px, #d00, solid);
+    				@include text-align();
+    				@include line-height(0.36rem);
+    				// @include padding(0.1rem 0.2rem);
+    				@include font-size(0.145rem);
+    				@include text-color(#fff);
+    				@include display(block);
+    				@include border-radius(0.17rem);
+    				@include float(left);
+    				@include background-color(#d00);
+    				@include font-weight();
+    			}
+    		}
+    	}
+    	.case{
+    		@include background-color(#fff);
+    		@include rect(100%, auto);
+    		.caseName{
+    			@include rect(100%, 0.5rem);
+    			@include padding(0.12rem 0.14rem);
+    			@include line-height(0.36rem);
+    		}
+    		img{
+    			@include rect(100%, auto);
+    		}
+        .case_home{
+          @include rect(100%, 0.85rem);
+          @include padding(0.12rem);
+          p:nth-child(1){
+            @include rect(100%, 0.25rem);
+            @include line-height(0.25rem);
+          }
+          p:nth-child(2){
+          	@include rect(100%, 0.35rem);
+            @include line-height(0.35rem);
+            @include font-size(0.11rem);
+            @include text-color(#999);
+            span:nth-child(2){
+              @include float(right);
+            }
+          }
+        }
+    	}
+    }
   }
 }
